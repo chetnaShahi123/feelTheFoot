@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+
+  <div class="login_container"  [ngStyle]="{'background-image': 'url(\'assets/images/logo.png\')'}">
+    <h1 class="login_header">Login Form</h1>
+    <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="emil">Email</label>
+        <input type="email" class="form-control" id="emil" [(ngModel)]="model.email" name="emil" required #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"  class="alert alert-danger">
+            Email is required
+        </div>
+
+      </div>
+ 
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" id="pwd" [(ngModel)]="model.password" name="passwd" required #pwdtemplateReferencevariable="ngModel">
+        <div [hidden]="pwdtemplateReferencevariable.valid || pwdtemplateReferencevariable.pristine"  class="alert alert-danger">
+          Password is required
+      </div>
+      </div>
+ 
+      <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid">Submit</button>
+ 
+    </form>
+</div>
+

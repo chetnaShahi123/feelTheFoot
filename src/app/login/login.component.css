@@ -1,0 +1,27 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  .login_container {
+    padding: 11%;
+   padding-left: 30%;
+   padding-right: 30%;
+   background-repeat: no-repeat;
+   background-position: 50%;
+   /* width: 100px;
+      height: 100px; */
+      background-size: cover; 
+  }
+  .login_header {
+    padding-bottom: 28px;
+  }
+  .submt {
+    margin-top: 20px;
+  }
+ .login_container label {
+    font-weight: bold;
+    font-size:18px;
+  }
