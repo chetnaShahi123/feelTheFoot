@@ -1,0 +1,47 @@
+.banner_image img {
+    width:100%;
+}
+.image_gallery img {
+    max-width: 100%;
+    width:173px;
+}
+.image_gallery {
+    width:100%;
+    float:left;
+    padding-top: 61px;
+    padding-left: 636px;
+}
+.image_gallery div {
+    display: inline-block;
+    width: 10.6667%;
+}
+#logoWrapperhome {
+    padding-left: 720px;
+    padding-top: 296px;
+ }
+ .logoImage img {
+    height: auto;
+    max-height: 80px;
+    width: 91px;
+    max-width: 100%;
+    cursor: pointer;
+}
+.logo_text {
+    position: absolute;
+    top: 113%;
+    left: 43%;
+    font-size: 63px;
+}
+.introduction {
+    word-wrap: break-word;
+    font-family: europa;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 21px;
+    letter-spacing: .5px;
+    line-height: 1.6em;
+    color: #1f1f1f;
+    padding-left: 600px;
+    padding-right: 508px;
+    padding-top: 55px;
+}

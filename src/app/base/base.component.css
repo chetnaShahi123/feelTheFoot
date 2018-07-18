@@ -1,0 +1,29 @@
+.base_image {
+    margin: 0px;
+    padding: 0px;
+}
+.quote {
+    position: absolute;
+    top: 48%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+}
+.main_link {
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 27px;
+    font-weight: bold;
+    border : 2px solid blueviolet;
+}
+.main_link a {
+    text-decoration: none;
+    color:#fff;
+}
