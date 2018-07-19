@@ -17,7 +17,7 @@ message : string;
 
   ngOnInit() {
   this.model = new User(1, 'a ', 'b ');
-  // this.submitted = false;
+   this.submitted = false;
   }
 
   
@@ -25,7 +25,8 @@ message : string;
     // this.submitted = true; 
 
     let observer = {
-      next : (result) => { alert(result),
+      next : (result) => { 
+          this.submitted = true; 
       this.message = result;
       },
       err: (error) => { alert(error),

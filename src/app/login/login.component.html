@@ -1,4 +1,7 @@
   <div class="login_container"  [ngStyle]="{'background-image': 'url(\'assets/images/login.jpg\')'}">
+    <ngb-alert type="success" [dismissible]="submitted" *ngIf="submitted" (close)="submitted=false">
+        <strong> {{message}}</strong>
+      </ngb-alert>
     <h1 class="login_header">Login Form</h1>
     <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
