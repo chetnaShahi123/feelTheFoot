@@ -12,6 +12,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { BaseComponent } from './base/base.component';
 import { FooterComponent } from './footer/footer.component';
 import { PreFooterComponent } from './pre-footer/pre-footer.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PreFooterComponent } from './pre-footer/pre-footer.component';
     LoginComponent,
     BaseComponent,
     FooterComponent,
-    PreFooterComponent
+    PreFooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

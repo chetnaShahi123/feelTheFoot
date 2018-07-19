@@ -1,5 +1,4 @@
-
-  <div class="login_container"  [ngStyle]="{'background-image': 'url(\'assets/images/logo.png\')'}">
+  <div class="login_container"  [ngStyle]="{'background-image': 'url(\'assets/images/login.jpg\')'}">
     <h1 class="login_header">Login Form</h1>
     <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -22,5 +21,11 @@
       <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid">Submit</button>
  
     </form>
+
+    <div class="register_block">
+      <p>
+        Don't have Account ? <a routerLink="/register">Register here</a>
+      </p>
+    </div>
 </div>
 

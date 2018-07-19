@@ -1,0 +1,62 @@
+  <div class="register_container"  [ngStyle]="{'background-image': 'url(\'assets/images/register.jpg\')'}">
+    <h1 class="login_header">Registration Form</h1>
+    <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="userDetails.name" name="name" required #nametemplateReferencevariable="ngModel">
+            <div [hidden]="nametemplateReferencevariable.valid || nametemplateReferencevariable.pristine"  class="alert alert-danger">
+              Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">DOB</label>
+            <input type="text" class="form-control" id="dob" [(ngModel)]="userDetails.dob" name="dob" required #dobtemplateReferencevariable="ngModel">
+            <div [hidden]="dobtemplateReferencevariable.valid || dobtemplateReferencevariable.pristine"  class="alert alert-danger">
+              DOB is required
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" [(ngModel)]="userDetails.age" name="age" required #agetemplateReferencevariable="ngModel">
+            <div [hidden]="agetemplateReferencevariable.valid || agetemplateReferencevariable.pristine"  class="alert alert-danger">
+              Age is required
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Course Type</label>
+            <input type="text" class="form-control" id="course" [(ngModel)]="userDetails.coursetype" name="course" required #crsetemplateReferencevariable="ngModel">
+            <div [hidden]="crsetemplateReferencevariable.valid || crsetemplateReferencevariable.pristine"  class="alert alert-danger">
+                Course Type is required
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="course">Dance Style</label>
+            <input type="text" class="form-control" id="style" [(ngModel)]="userDetails.danceStyle" name="style" required >
+        </div>
+
+      <div class="form-group">
+        <label for="emil">Email</label>
+        <input type="email" class="form-control" id="emil" [(ngModel)]="userDetails.email" name="emil" required #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"  class="alert alert-danger">
+            Email is required
+        </div>
+
+      </div>
+ 
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" id="pwd" [(ngModel)]="userDetails.password" name="passwd" required #pwdtemplateReferencevariable="ngModel">
+        <div [hidden]="pwdtemplateReferencevariable.valid || pwdtemplateReferencevariable.pristine"  class="alert alert-danger">
+          Password is required
+      </div>
+      </div>
+ 
+      <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid">Submit</button>
+ 
+    </form>
+    </div>
