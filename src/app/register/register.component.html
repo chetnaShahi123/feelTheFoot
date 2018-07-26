@@ -1,4 +1,7 @@
   <div class="register_container"  [ngStyle]="{'background-image': 'url(\'assets/images/register.jpg\')'}">
+    <ngb-alert type="success" [dismissible]="submitted" *ngIf="submitted" (close)="submitted=false">
+      <strong> {{message}}</strong>
+    </ngb-alert>
     <h1 class="login_header">Registration Form</h1>
     <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
 
@@ -57,6 +60,6 @@
       </div>
  
       <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid">Submit</button>
- 
+      
     </form>
     </div>

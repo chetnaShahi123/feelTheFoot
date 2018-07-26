@@ -6,20 +6,21 @@ import { OnInit } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService implements OnInit{
+  message : String;
 
   constructor() { 
     
-    // localStorage.setItem('email','chetnashahi@gmail.com');
-    // localStorage.setItem('password','Admin1234');
+    localStorage.setItem('email','chetnashahi@gmail.com');
+    localStorage.setItem('password','Admin1234');
   }
 
    ngOnInit() {
-    localStorage.setItem('email','chetnashahi@gmail.com');
-    localStorage.setItem('password','Admin1234');
+    // localStorage.setItem('email','chetnashahi@gmail.com');
+    // localStorage.setItem('password','Admin1234');
    }
   
   validateLoginUser(userCredential) {
-    message : String;
+    // message : String;
 
     function subscriber (observer) {
       //const handler = (e) => observer.next(e.keyCode);
@@ -35,4 +36,23 @@ export class DataService implements OnInit{
     let LoginObservable= new Observable(subscriber);
      return LoginObservable;
   }
+
+  RegisterUser(userDetail) {
+
+    function subscriber (observer) {
+      localStorage.setItem('id',userDetail.id);
+      localStorage.setItem('name',userDetail.name);
+      localStorage.setItem('email',userDetail.email);
+      localStorage.setItem('password',userDetail.password);
+      localStorage.setItem('dob',userDetail.dob);
+      localStorage.setItem('age',userDetail.age);
+      localStorage.setItem('danceStyle',userDetail.danceStyle);
+      localStorage.setItem('coursetype',userDetail.coursetype);
+      observer.next('You are successfully registered');
+    }
+    let registerObservable = new Observable(subscriber);
+    return registerObservable;
+  }
 }
+
+
