@@ -1,3 +1,15 @@
-<p>
-  choreographers works!
-</p>
+<div class="user_content" [ngStyle]="{'background-image': 'url(\'assets/images/choreographers.jpg\')'}">
+  <h1>List of available ChoreoGraphers</h1>
+    <ul [@listStagger] = "users$">
+            <li *ngFor="let user of users$">
+              <a routerLink='/details/{{user.id}}'>{{user.name | uppercase}}</a>
+          
+              <ul>
+                <li>{{user.email}}</li>
+                <li>
+                  <a href="http://{{user.website}}">{{user.website}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+</div>
