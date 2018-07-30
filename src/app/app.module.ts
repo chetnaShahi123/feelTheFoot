@@ -20,6 +20,9 @@ import { PreFooterComponent } from './pre-footer/pre-footer.component';
 import { RegisterComponent } from './register/register.component';
 import { ChoreographersComponent } from './choreographers/choreographers.component';
 import { environment } from '../environments/environment';
+import { DancersComponent } from './dancers/dancers.component';
+import { SummerProgramsComponent } from './summer-programs/summer-programs.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { environment } from '../environments/environment';
     FooterComponent,
     PreFooterComponent,
     RegisterComponent,
-    ChoreographersComponent
+    ChoreographersComponent,
+    DancersComponent,
+    SummerProgramsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

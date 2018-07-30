@@ -1,10 +1,14 @@
 <div id="container" *ngIf = "currentUrl != '/' ; else landingWebsite" >
-  
+ 
   <app-header></app-header>
   
   <div id="content">
+      <div class="sidebar">
+          <app-sidebar></app-sidebar>
+      </div>
     <router-outlet></router-outlet>
-    <!-- <app-sidebar></app-sidebar> -->
+    
+    
   </div>
 
   <app-pre-footer></app-pre-footer>

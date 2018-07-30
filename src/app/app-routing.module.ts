@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { BaseComponent } from './base/base.component';
 import { RegisterComponent } from './register/register.component';
 import { ChoreographersComponent } from './choreographers/choreographers.component';
+import { DancersComponent } from './dancers/dancers.component';
+import { SummerProgramsComponent } from './summer-programs/summer-programs.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes : Routes = [
   {
@@ -34,6 +37,18 @@ const routes : Routes = [
   {
     path : 'choreographers',
     component : ChoreographersComponent
+  },
+  {
+    path : 'dancers',
+    component : DancersComponent
+  },
+  {
+    path : 'summerPrograms',
+    component : SummerProgramsComponent
+  },
+  {
+    path : 'contactUs',
+    component : ContactUsComponent
   }
 ]
 
