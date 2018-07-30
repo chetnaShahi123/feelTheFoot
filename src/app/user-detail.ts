@@ -7,6 +7,8 @@ export class UserDetail {
         public dob : Date,
         public age : number,
         public danceStyle : string,
-        public coursetype : string
+        public coursetype : string,
+        public role : string,
+        public available : string
     ) {}
 }

@@ -15,10 +15,17 @@
 
         <div class="form-group">
             <label for="dob">DOB</label>
-            <input type="text" class="form-control" id="dob" [(ngModel)]="userDetails.dob" name="dob" required #dobtemplateReferencevariable="ngModel">
-            <div [hidden]="dobtemplateReferencevariable.valid || dobtemplateReferencevariable.pristine"  class="alert alert-danger">
+            <!-- <ngb-datepicker #d></ngb-datepicker> -->
+            <input type="text" class="form-control" ngbDatepicker #d="ngbDatepicker"  #dobtemplateReferencevariable
+                />
+                <i class="material-icons" title="Contact us" (click)="d.toggle()">calendar today</i>
+            <!-- <input type="text" ngbDatepicker [(ngModel)]="userDetails.dob" name="dob"/> -->
+<!-- <button (click)="d.toggle()">Toggle</button> -->
+            <!-- <input type="text" ngbDatepicker #d="ngbDatepicker"/> -->
+            <!-- <input type="text" class="form-control" id="dob" [(ngModel)]="userDetails.dob" name="dob" required #dobtemplateReferencevariable="ngModel"> -->
+            <!-- <div [hidden]="dobtemplateReferencevariable || dobtemplateReferencevariable.pristine"  class="alert alert-danger">
               DOB is required
-          </div>
+          </div> -->
         </div>
 
         <div class="form-group">
@@ -26,6 +33,25 @@
             <input type="number" class="form-control" id="age" [(ngModel)]="userDetails.age" name="age" required #agetemplateReferencevariable="ngModel">
             <div [hidden]="agetemplateReferencevariable.valid || agetemplateReferencevariable.pristine"  class="alert alert-danger">
               Age is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" class="form-control" id="role" [(ngModel)]="userDetails.role" name="role" required #rolesetemplateReferencevariable="ngModel">
+          <div [hidden]="rolesetemplateReferencevariable.valid || rolesetemplateReferencevariable.pristine"  class="alert alert-danger">
+              Role is required
+        </div>
+      </div>
+   
+      <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Role</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button value="choreographer" class="dropdown-item" ng-click="updateRole(choreographer)">Choreographer</button>
+              <button value="dancer" class="dropdown-item" ng-click="userDetails.role = dancer">Dancer</button>
+              <!-- <button class="dropdown-item">Something else is here</button> -->
+            </div>
           </div>
         </div>
 
@@ -63,3 +89,26 @@
       
     </form>
     </div>
+
+    <!-- <div class="row">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Role</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button value="choreographer" class="dropdown-item" ng-click="userDetails.role = choreographer">Choreographer</button>
+              <button value="dancer" class="dropdown-item" ng-click="userDetails.role = dancer">Dancer</button>
+              <!-- <button class="dropdown-item">Something else is here</button> -->
+            <!-- </div>
+          </div>
+        </div>
+      <div class="col text-right">
+          <div ngbDropdown placement="top-right" class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Toggle dropup</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+              <button class="dropdown-item">Action - 1</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div> --> -->

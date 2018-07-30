@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor(private data : DataService, private db: AngularFirestore,private router : Router) { }
 
   ngOnInit() {
-    this.userDetails = new UserDetail (1,'name', 'email', '', new Date(1234-11-1), 1, 'salsa','regular');
+    this.userDetails = new UserDetail (1,'name', 'email', '', new Date(1234-11-1), 1, 'salsa','regular','role','available Day');
     this.submitted = false;
   }
 
@@ -37,6 +37,10 @@ export class RegisterComponent implements OnInit {
    });
   //  db.collection('dancers').valueChanges();
 
+  }
+
+  updateRole(role) {
+    this.userDetails['role'] = role;
   }
 
 }

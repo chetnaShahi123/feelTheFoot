@@ -1,3 +1,16 @@
-<p>
-  dancers works!
-</p>
+<div class="user_content" [ngStyle]="{'background-image': 'url(\'assets/images/choreographers.jpg\')'}">
+  <h1>List of available Dancers</h1>
+    <ul [@listStagger] = "dancers">
+            <li *ngFor="let dancer of dancers">
+              <a routerLink=''>{{dancer.name | uppercase}}</a>
+          
+              <ul>
+                <li>DanceStyle : {{dancer.dancestyle}}</li>
+                <li>
+                    CourseType : {{dancer.coursetype}}
+                </li>
+                <li> Age: {{dancer.age}}</li>
+              </ul>
+            </li>
+          </ul>
+</div>

@@ -1,14 +1,9 @@
-.user_content {
+/* .user_content {
     text-align: center;
     padding: 150px 50px;
     background-repeat: no-repeat;
      background-position: 50%;
-    /* width: 100px;
-       height: 100px; */
        background-size: cover;  
-}
-.user_content h1 {
-    color: purple;
 }
 .user_content ul {
     list-style-type: none;
@@ -16,7 +11,6 @@
 }
 
 .user_content ul li {
-    /* background: #fff; */
     background: pink;
     border-radius: 8px;
     padding: 20px;
@@ -37,4 +31,10 @@
 .user_content ul li ul li a {
     font-size: 1em;
     font-weight: 300;
+} */
+.user_content ul li {
+    background: pink;
+}
+.user_content h1 {
+    color: purple;
 }

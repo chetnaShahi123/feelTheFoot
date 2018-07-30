@@ -33,17 +33,24 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 })
 export class ChoreographersComponent implements OnInit {
   users$ : object;
+  choreographer: string;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getUsers().subscribe(
-      // data => this.users$ = data
+    this.choreographer = 'choreographer';
+    this.data.getDancers(this.choreographer).subscribe(
       data => {
-        this.users$ = data;
-        console.log(data);
+        this.users$ = data; 
       }
     );
+    // this.data.getUsers().subscribe(
+    //   // data => this.users$ = data
+    //   data => {
+    //     this.users$ = data;
+    //     console.log(data);
+    //   }
+    // );
   }
 
 

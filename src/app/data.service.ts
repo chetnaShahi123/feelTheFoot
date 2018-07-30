@@ -49,8 +49,8 @@ export class DataService implements OnInit{
       .then(result=>{
        // resolve(result);
        const userId = result.user.uid; 
-       const itemRef =  this.db.collection('dancersDetail');
-       const detail:any = {'name':userDetail.name, 'dob':userDetail.dob, 'age':userDetail.age, 'dancestyle':userDetail.danceStyle, 'coursetype':userDetail.coursetype, dancerId: userId};
+       const itemRef =  this.db.collection('DancerDetail');
+       const detail:any = {'name':userDetail.name, 'dob':userDetail.dob, 'age':userDetail.age, 'dancestyle':userDetail.danceStyle, 'coursetype':userDetail.coursetype,role:userDetail.role,available:userDetail.available , choreographerId: userId};
        itemRef.add(detail)
        .then(result=>{
         resolve("You are registered successfully !");
@@ -68,6 +68,21 @@ export class DataService implements OnInit{
   getUsers() {
     // return this.http.get('https://reqres.in/api/users');
     return this.http.get<Object[]>('https://jsonplaceholder.typicode.com/users')
+  }
+
+  getDancers(role) {
+    // return new Promise((resolve,reject)=> {
+      // return this.db.collection('DancerDetail').valueChanges();
+       return this.db.collection("DancerDetail", ref=>ref.where('role', '==', role)).valueChanges();
+
+// let query = dancersRef.where("role", "==", role);
+    //   .then(result=>{
+    //     resolve(result);
+    //   })
+    //   .catch(error=>{
+    //     reject(error);
+    //   })
+    // })
   }
 
 }
