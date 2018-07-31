@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
  userDetails : Object;
+ // ud: UserDetails;
  message : string;
  submitted : boolean;
 
@@ -22,7 +23,7 @@ export class RegisterComponent implements OnInit {
     this.submitted = false;
   }
 
-  onSubmit() { 
+  mySubmit() { console.log('this is being called.');
     // dancers : Observable;
    // console.log("done");
    let observer = {

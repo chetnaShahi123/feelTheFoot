@@ -3,7 +3,7 @@
       <strong> {{message}}</strong>
     </ngb-alert>
     <h1 class="login_header">Registration Form</h1>
-    <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
+    <form #loginForm = "ngForm" (ngSubmit)="mySubmit()">
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -16,9 +16,9 @@
         <div class="form-group">
             <label for="dob">DOB</label>
             <!-- <ngb-datepicker #d></ngb-datepicker> -->
-            <input type="text" class="form-control" ngbDatepicker #d="ngbDatepicker"  #dobtemplateReferencevariable
+            <input type="text" class="form-control" ngbDatepicker #d="ngbDatepicker"  (click)="d.toggle()" #dobtemplateReferencevariable
                 />
-                <i class="material-icons" title="Contact us" (click)="d.toggle()">calendar today</i>
+                <!-- <i class="material-icons" title="Contact us" (click)="d.toggle()">calendar today</i> -->
             <!-- <input type="text" ngbDatepicker [(ngModel)]="userDetails.dob" name="dob"/> -->
 <!-- <button (click)="d.toggle()">Toggle</button> -->
             <!-- <input type="text" ngbDatepicker #d="ngbDatepicker"/> -->
@@ -44,16 +44,16 @@
         </div>
       </div>
    
-      <div class="col">
+      <!-- <div class="col">
           <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Role</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
               <button value="choreographer" class="dropdown-item" ng-click="updateRole(choreographer)">Choreographer</button>
               <button value="dancer" class="dropdown-item" ng-click="userDetails.role = dancer">Dancer</button>
               <!-- <button class="dropdown-item">Something else is here</button> -->
-            </div>
+            <!-- </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
             <label for="course">Course Type</label>
