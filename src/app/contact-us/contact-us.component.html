@@ -1,3 +1,32 @@
-<p>
-  contact-us works!
-</p>
+<div class="contact_container">
+    <ngb-alert type="success" [dismissible]="submitted" *ngIf="submitted" (close)="submitted=false">
+        <strong> {{response}}</strong>
+      </ngb-alert>
+      <ngb-alert type="danger" [dismissible]="error" *ngIf="error" (close)="error=false">
+          <strong> {{response}}</strong>
+        </ngb-alert>
+  <h1  appShadow class="contact_header">Send Us a Message ({{currency | currency: 'EUR'}})</h1>
+  <h5 [appShadow]= "'green'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'" appFancy>
+    For general inquiries, please call 212-405-9000 or use the Contact form below.
+  </h5><br>
+<form #contactForm = "ngForm" (ngSubmit)="processForm()">
+  
+  <!-- name -->
+  <div class="form-group field">
+    <input type="text" name="name" class="form-control input" placeholder="Your Name" [(ngModel)]="name" >
+  </div>
+
+  <!-- email -->
+  <div class="form-group field">
+    <input type="email" name="email" class="form-control input" placeholder="Your Email" [(ngModel)]="email" >
+  </div>
+
+  <!-- message -->
+  <div class="form-group field">
+    <textarea class="form-control textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message" ></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success button is-danger is-large submt" [disabled]="!contactForm.form.valid">Submit</button>
+
+</form>
+</div>

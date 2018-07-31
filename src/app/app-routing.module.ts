@@ -10,6 +10,7 @@ import { ChoreographersComponent } from './choreographers/choreographers.compone
 import { DancersComponent } from './dancers/dancers.component';
 import { SummerProgramsComponent } from './summer-programs/summer-programs.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import {LogoutComponent } from './logout/logout.component';
 
 const routes : Routes = [
   {
@@ -49,6 +50,10 @@ const routes : Routes = [
   {
     path : 'contactUs',
     component : ContactUsComponent
+  },
+  {
+    path : 'logout',
+    component : LogoutComponent
   }
 ]
 

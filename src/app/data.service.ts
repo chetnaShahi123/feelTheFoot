@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { HttpClient } from '@angular/common/http';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -84,6 +85,22 @@ export class DataService implements OnInit{
     //   })
     // })
   }
+
+  contactUs(name,email,message){
+    return new Promise((resolve,reject)=>{
+      const itemRef =  this.db.collection('ContactUs');
+      const detail:any = {'name':name, 'email':email, 'message':message};
+      itemRef.add(detail)
+      .then(result =>{
+        resolve("Thankyou for your response! We have received your message ! will get back to you soon.");
+      })
+      .catch(err=>{
+        reject(err);
+      })
+    })
+   
+  }
+
 
 }
 

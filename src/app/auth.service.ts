@@ -39,4 +39,9 @@ export class AuthService {
     //  return LoginObservable;
   }
 
+  // logout() {
+  //   this.firauth.auth.signOut();
+  //   var user = this.firauth.a;
+  // }
+
 }

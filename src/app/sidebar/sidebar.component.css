@@ -20,3 +20,7 @@ nav ul li a {
     padding: 20px;
     display: block;
 }
+nav ul li .activated {
+    /* background-color: #00a8ff; */
+    background-color: yellowgreen;
+}

@@ -1,0 +1,18 @@
+.contact_container {
+    padding: 11%;
+   padding-left: 30%;
+   padding-right: 30%;
+   background-repeat: no-repeat;
+   background-position: 50%;
+   /* width: 100px;
+      height: 100px; */
+      background-size: cover; 
+  }
+  .contact_header {
+    padding-bottom: 28px;
+    background-color: orange;
+    padding-left: 16px;
+  }
+  .submt {
+    margin-top: 20px;
+  }

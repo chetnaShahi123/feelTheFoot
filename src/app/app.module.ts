@@ -23,6 +23,10 @@ import { environment } from '../environments/environment';
 import { DancersComponent } from './dancers/dancers.component';
 import { SummerProgramsComponent } from './summer-programs/summer-programs.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ShadowDirective } from './shadow.directive';
+import { FancyDirective } from './fancy.directive';
+import { DancerDetailComponent } from './dancer-detail/dancer-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ChoreographersComponent,
     DancersComponent,
     SummerProgramsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    LogoutComponent,
+    ShadowDirective,
+    FancyDirective,
+    DancerDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,26 +1,30 @@
 <nav>
     <ul>
       <li>
-        <a routerLink="choreographers">
+        <a routerLink="choreographers" [class.activated]="currentUrl == '/choreographers' ">
           <i class="material-icons" title="List of choreographers">accessibility new</i>
           <!-- <i class="material-icons">supervised_user_circle</i> -->
         </a>
       </li>
       <li>
-        <a routerLink="dancers">
+        <a routerLink="dancers" [class.activated]="currentUrl == '/dancers'">
           <i class="material-icons" title="List of Dancers">accessibility</i>
         </a>
       </li>
       <li>
-        <a routerLink="summerPrograms">
+        <a routerLink="summerPrograms" [class.activated]="currentUrl == '/summerPrograms'">
           <i class="material-icons" title="Summer Programs">supervised_user_circle</i>
         </a>
       </li>
       <li>
-          <a routerLink="contactUs">
+        <a routerLink="register" [class.activated]="currentUrl == '/register'">
+          <i class="material-icons" title="Registration">add</i>
+        </a>
+      </li>
+      <li>
+          <a routerLink="contactUs" [class.activated]="currentUrl == '/contactUs'">
             <i class="material-icons" title="Contact us">message</i>
           </a>
         </li>
     </ul>
   </nav>
- 
