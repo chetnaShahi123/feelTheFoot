@@ -27,6 +27,10 @@ message : string;
     this.auth.validateLoginUser(this.model).then(result=>{
       this.router.navigate(['choreographers']);
     })
+    .catch(err=>{
+      this.submitted = true; 
+      this.message = err;
+    })
     // this.submitted = true; 
 
     // let observer = {

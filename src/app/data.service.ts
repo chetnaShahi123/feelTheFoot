@@ -95,7 +95,7 @@ export class DataService implements OnInit{
         resolve("Thankyou for your response! We have received your message ! will get back to you soon.");
       })
       .catch(err=>{
-        reject(err);
+        reject(err.message);
       })
     })
    

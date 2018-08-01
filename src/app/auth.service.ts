@@ -7,6 +7,9 @@ import { promise } from 'protractor';
   providedIn: 'root'
 })
 export class AuthService {
+  private loggedInStatus: boolean = false;
+  loggedIn: any;
+  redirectUrl: string = '/choreographers';
 
   constructor(private firauth : AngularFireAuth, private db: AngularFirestore) { }
 
@@ -14,11 +17,12 @@ export class AuthService {
     return new Promise((resolve, reject)=> {
       this.firauth.auth.signInWithEmailAndPassword(userCredential.email, userCredential.password)
     .then(result=>{
+      this.setLoggedInStatus(true);
      resolve("You are registered login !");
     
     })
     .catch(err=> {
-      reject(err);
+      reject(err.message);
     })
   })
     
@@ -43,5 +47,22 @@ export class AuthService {
   //   this.firauth.auth.signOut();
   //   var user = this.firauth.a;
   // }
+
+  getLoggedInStatus () : boolean {
+    return this.loggedInStatus;
+  }
+
+  setLoggedInStatus (isLoggedIn: boolean) : void {
+    this.loggedInStatus = isLoggedIn
+  }
+
+  getCurrentUser() {
+    return this.firauth.auth.currentUser;
+  }
+
+  logout() {
+    this.setLoggedInStatus(false);
+    return this.firauth.auth.signOut();
+  }
 
 }
