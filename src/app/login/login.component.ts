@@ -4,6 +4,7 @@ import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 // import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-login',
@@ -49,6 +50,16 @@ message : string;
 
   }
 
+  googleLogin() {
+    this.auth.googleLogin().then(resu=>{
+      console.log("done");
+      this.router.navigate(['dancers']);
+    })
+    .catch(err=>{
+      this.submitted = true; 
+      this.message = err;
+    })
+  }
 
 
 }

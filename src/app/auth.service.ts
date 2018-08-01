@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { promise } from 'protractor';
+import { auth } from 'firebase/app';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +65,19 @@ export class AuthService {
   logout() {
     this.setLoggedInStatus(false);
     return this.firauth.auth.signOut();
+  }
+
+  googleLogin() {
+    return new Promise((resolve, reject)=> {
+    this.firauth.auth.signInWithPopup(new auth.GoogleAuthProvider)
+    .then(data => {
+      this.setLoggedInStatus(true);
+      resolve(data);
+    })
+    .catch(err => {
+      reject(err.message);
+    });
+  })
   }
 
 }

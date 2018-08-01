@@ -21,9 +21,11 @@
       </div>
       </div>
  
-      <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid">Submit</button>
+      <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid" sclass="waves-light" mdbWavesEffect>Submit</button>
  
     </form>
+    <br>
+    <button type="button" (click)="googleLogin()" mdbBtn class="btn btn-danger btn-gplus waves-light" mdbWavesEffect><i class="fa fa-google-plus left"></i>Login with Google</button>
 
     <div class="register_block">
       <p>

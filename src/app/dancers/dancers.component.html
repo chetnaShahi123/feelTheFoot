@@ -2,7 +2,7 @@
   <h1>List of available Dancers</h1>
     <ul [@listStagger] = "dancers">
             <li *ngFor="let dancer of dancers">
-              <a routerLink=''>{{dancer.name | uppercase}}</a>
+              <a routerLink='/details/{{dancer.choreographerId}}'>{{dancer.name | uppercase}}</a>
           
               <ul>
                 <li>DanceStyle : {{dancer.dancestyle}}</li>
