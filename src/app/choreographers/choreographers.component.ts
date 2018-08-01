@@ -43,6 +43,7 @@ export class ChoreographersComponent implements OnInit {
     this.data.getDancers(this.choreographer).subscribe(
       data => {
         this.users$ = data; 
+        console.log(data);
       }
     );
     // this.data.getUsers().subscribe(

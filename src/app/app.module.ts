@@ -27,6 +27,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ShadowDirective } from './shadow.directive';
 import { FancyDirective } from './fancy.directive';
 import { DancerDetailComponent } from './dancer-detail/dancer-detail.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DancerDetailComponent } from './dancer-detail/dancer-detail.component';
     LogoutComponent,
     ShadowDirective,
     FancyDirective,
-    DancerDetailComponent
+    DancerDetailComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

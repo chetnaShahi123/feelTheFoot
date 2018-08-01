@@ -12,6 +12,7 @@ import { DancersComponent } from './dancers/dancers.component';
 import { SummerProgramsComponent } from './summer-programs/summer-programs.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import {LogoutComponent } from './logout/logout.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes : Routes = [
   {
@@ -58,6 +59,10 @@ const routes : Routes = [
     path : 'logout',
     component : LogoutComponent
   }
+  // {
+  //   path : 'details/:id',
+  //   component : DetailsComponent
+  // }
 ]
 
 @NgModule({

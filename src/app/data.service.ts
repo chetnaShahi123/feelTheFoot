@@ -71,6 +71,10 @@ export class DataService implements OnInit{
     return this.http.get<Object[]>('https://jsonplaceholder.typicode.com/users')
   }
 
+  getDancer(userId) {
+    return this.db.collection("DancerDetail", ref=>ref.where('id', '==', userId)).valueChanges();
+  }
+
   getDancers(role) {
     // return new Promise((resolve,reject)=> {
       // return this.db.collection('DancerDetail').valueChanges();
