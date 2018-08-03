@@ -3,6 +3,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dancers',
@@ -35,18 +36,33 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class DancersComponent implements OnInit {
   dancers :Object;
   dancer : string;
+  currentUrl : string;
  
 
-  constructor(private db:AngularFirestore, private data: DataService ) { }
+  constructor(private db:AngularFirestore, private data: DataService , private router: Router) { 
+    router.events.subscribe((route) => {
+      this.currentUrl = router.url;
+      this.data.storeUrl(this.currentUrl);
+    });
+    this.dancers_list();
+  }
 
   ngOnInit() {
+    // this.dancer = 'dancer';
+    // this.data.getDancers(this.dancer).subscribe(
+    //   data => {
+    //     this.dancers = data; 
+    //   }
+    // );
+    // this.dancers = this.db.collection('DancerDetail').valueChanges();
+  }
+  dancers_list() {
     this.dancer = 'dancer';
     this.data.getDancers(this.dancer).subscribe(
       data => {
         this.dancers = data; 
       }
     );
-    // this.dancers = this.db.collection('DancerDetail').valueChanges();
   }
 
 }

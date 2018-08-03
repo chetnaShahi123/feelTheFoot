@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <div id="container" *ngIf = "currentUrl != '/' ; else landingWebsite" >
   <app-header></app-header>
   
@@ -15,14 +14,10 @@
   <app-pre-footer></app-pre-footer>
   <app-footer></app-footer>
 </div>
-<div class="container">
-    <div class="row">
+
 <ng-template #landingWebsite>
     <app-base></app-base>
 </ng-template>
 <!-- <app-home></app-home>
 <app-sidebar></app-sidebar> -->
-  </div>
-</div>
-</html>
 

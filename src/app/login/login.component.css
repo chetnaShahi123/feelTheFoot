@@ -28,3 +28,7 @@
   .register_block {
     padding-top: 19px;
   }
+  .forgt_pwd {
+    cursor: pointer;
+    color: #007bff;
+  }

@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
 submitted: boolean;
+submitted_success : boolean;
 model : object;
 message : string;
 
@@ -21,6 +22,7 @@ message : string;
   ngOnInit() {
   this.model = new User(1, 'a ', 'b ');
    this.submitted = false;
+   this.submitted_success = false;
   }
 
   
@@ -61,5 +63,9 @@ message : string;
     })
   }
 
+  forgotPasswrd() {
+    this.submitted_success = true;
+    this.message = "Data saved !";
+  }
 
 }

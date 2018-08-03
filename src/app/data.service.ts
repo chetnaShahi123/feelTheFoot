@@ -44,7 +44,6 @@ export class DataService implements OnInit{
   // }
 
   RegisterUser(userDetail) { 
-    
      return new Promise((resolve, reject)=> {
         this.firauth.auth.createUserWithEmailAndPassword(userDetail.email, userDetail.password)
       .then(result=>{
@@ -105,6 +104,14 @@ export class DataService implements OnInit{
    
   }
 
+  storeUrl(route_url) {
+    localStorage.setItem('route',route_url);
+  }
+
+  getUrl() {
+    const route_url = localStorage.getItem('route');
+    return route_url;
+  }
 
 }
 

@@ -15,27 +15,34 @@ export class RegisterComponent implements OnInit {
  // ud: UserDetails;
  message : string;
  submitted : boolean;
+ err_submitted:boolean;
 
   constructor(private data : DataService, private db: AngularFirestore,private router : Router) { }
 
   ngOnInit() {
     this.userDetails = new UserDetail (1,'name', 'email', '', new Date(1234-11-1), 1, 'salsa','regular','role','available Day');
     this.submitted = false;
+    this.err_submitted = false;
   }
 
-  mySubmit() { console.log('this is being called.');
+  mySubmit() { 
     // dancers : Observable;
    // console.log("done");
-   let observer = {
-      next : (next) => {console.log(next);this.submitted = true;this.message = next; }
-   }
+  //  let observer = {
+  //     next : (next) => {console.log(next);this.submitted = true;this.message = next; }
+  //  }
   // this.data.RegisterUser(this.userDetails).subscribe (observer);
+  if(this.userDetails['role'] != 'dancer' && this.userDetails['role'] != 'choreographer') {
+    this.err_submitted = true;
+    this.message = "Please choose role as mentioned.plz check with the spelling also if needed !";
+  } else {
    this.data.RegisterUser(this.userDetails).then(abc=>{
     //  console.log(abc);
      // this.message = abc;
      this.router.navigate(['login']);
       //this.submitted = true;
    });
+  }
   //  db.collection('dancers').valueChanges();
 
   }

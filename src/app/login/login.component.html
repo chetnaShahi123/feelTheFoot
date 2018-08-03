@@ -2,6 +2,9 @@
     <ngb-alert type="danger" [dismissible]="submitted" *ngIf="submitted" (close)="submitted=false">
         <strong> {{message}}</strong>
       </ngb-alert>
+      <ngb-alert type="success" [dismissible]="submitted_success" *ngIf="submitted_success" (close)="submitted_success=false">
+        <strong> {{message}}</strong>
+      </ngb-alert>
     <h1 class="login_header">Login Form</h1>
     <form #loginForm = "ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -22,6 +25,7 @@
       </div>
  
       <button type="submit" class="btn btn-success submt" [disabled]="!loginForm.form.valid" sclass="waves-light" mdbWavesEffect>Submit</button>
+  
  
     </form>
     <br>
@@ -30,6 +34,11 @@
     <div class="register_block">
       <p>
         Don't have Account ? <a routerLink="/register">Register here</a>
+      </p>
+    </div>
+    <div class="forgot_block">
+      <p class="forgt_pwd" (click)="forgotPasswrd();">
+       Forgot password ?
       </p>
     </div>
 </div>

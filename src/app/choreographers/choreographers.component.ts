@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choreographers',
@@ -35,17 +36,34 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export class ChoreographersComponent implements OnInit {
   users$ : object;
   choreographer: string;
+  currentUrl : string;
+  _router : any;
 
-  constructor(private data: DataService) { }
 
-  ngOnInit() {
-    this.choreographer = 'choreographer';
+  constructor(private data: DataService, private router: Router) { 
+    this._router = router;
+    this._router.events.subscribe((route) => {
+      this.currentUrl = this._router.url;
+      this.data.storeUrl(this.currentUrl);
+    });
+
+      this.choreographer = 'choreographer';
     this.data.getDancers(this.choreographer).subscribe(
       data => {
         this.users$ = data; 
         console.log(data);
       }
     );
+  }
+
+  ngOnInit() {
+    // this.choreographer = 'choreographer';
+    // this.data.getDancers(this.choreographer).subscribe(
+    //   data => {
+    //     this.users$ = data; 
+    //     console.log(data);
+    //   }
+    // );
     // this.data.getUsers().subscribe(
     //   // data => this.users$ = data
     //   data => {
