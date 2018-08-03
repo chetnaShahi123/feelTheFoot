@@ -13,7 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { BaseComponent } from './base/base.component';
 import { FooterComponent } from './footer/footer.component';
 import { PreFooterComponent } from './pre-footer/pre-footer.component';
