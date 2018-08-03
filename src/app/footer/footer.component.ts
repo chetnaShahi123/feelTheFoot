@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NegotiateService } from '../negotiate.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  negtiate_variable : any;
 
-  constructor() { }
+  constructor(private negotiate: NegotiateService) { }
 
   ngOnInit() {
+    this.negotiate.eventSink().subscribe(events=>{
+      console.log(events);
+      this.negtiate_variable = events;
+    })
   }
 
 }

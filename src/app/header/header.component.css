@@ -78,6 +78,7 @@ nav ul li{
     margin: 0;
     font-size: 0;
     max-width: 100%;
+    width: 75px;
 }
 #logoImage a {
     display: block;

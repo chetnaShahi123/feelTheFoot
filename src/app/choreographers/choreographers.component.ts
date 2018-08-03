@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { NegotiateService } from '../negotiate.service';
 
 @Component({
   selector: 'app-choreographers',
@@ -40,7 +41,7 @@ export class ChoreographersComponent implements OnInit {
   _router : any;
 
 
-  constructor(private data: DataService, private router: Router) { 
+  constructor(private data: DataService, private router: Router, private negotiate : NegotiateService) { 
     this._router = router;
     this._router.events.subscribe((route) => {
       this.currentUrl = this._router.url;
@@ -71,6 +72,8 @@ export class ChoreographersComponent implements OnInit {
     //     console.log(data);
     //   }
     // );
+    const demo:string = "Its an 'Inter Component Communication' variable";
+    this.negotiate.createEvent('data added : ' + demo);
   }
 
 

@@ -1,7 +1,11 @@
 .base_image {
     margin: 0px;
     padding: 0px;
+    
 }
+.base_image img {    width: 100vw;
+    height: 100vh;
+    object-fit: cover;}
 .quote {
     position: absolute;
     top: 48%;
@@ -14,15 +18,19 @@
 }
 .main_link {
     position: absolute;
-    top: 50%;
+    top: 21vw;
     left: 44%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     cursor: pointer;
     font-size: 27px;
-    font-weight: bold;
-    border : 2px solid blueviolet;
+    background: blueviolet;
+    font-weight: bold; 
+    padding: 8px 30px 12px;
+    border-radius: 5px;
 }
+.main_link:hover {background: red;transition: all 0.3s ease-in-out 0s;}
 .main_link a {
     text-decoration: none;
     color:#fff;

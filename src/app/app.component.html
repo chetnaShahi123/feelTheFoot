@@ -1,6 +1,7 @@
 
 <div id="container" *ngIf = "currentUrl != '/' ; else landingWebsite" >
-  <app-header></app-header>
+  <div class="main-container">
+    <app-header></app-header>
   
   <div id="content">
       <div class="sidebar">
@@ -12,6 +13,7 @@
   </div>
 
   <app-pre-footer></app-pre-footer>
+</div>
   <app-footer></app-footer>
 </div>
 

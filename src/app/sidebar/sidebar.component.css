@@ -1,24 +1,24 @@
 nav {
-    /* background: #2D2E2E; */
     background: black;
-    /* height: 21%; */
     margin-right: 94%;
-    width: 6%;    
+    width: 72px;
     position: absolute;
     top: 210px;
     left: 0px;
-    height: 61%;
-    /* height:129%; */
+    height: auto;
 }
 nav ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
     }
+    nav ul li    {    border-top: 1px solid #af9d9d;}
+    nav ul li:hover {background: red;transition: all 0.3s ease-in-out 0s;}
 nav ul li a {
     color: #fff;
     padding: 20px;
     display: block;
+    text-align: center;
 }
 nav ul li .activated {
     /* background-color: #00a8ff; */
