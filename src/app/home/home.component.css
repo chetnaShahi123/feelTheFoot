@@ -6,19 +6,26 @@
     width:173px;
 }
 .image_gallery {
-    width:100%;
-    float:left;
+    width: 1400px;
     padding-top: 61px;
-    padding-left: 636px;
+    padding-left: 0;
+    text-align: center;
+    margin: auto;
 }
 .image_gallery div {
     display: inline-block;
     width: 10.6667%;
 }
 #logoWrapperhome {
-    padding-left: 720px;
-    padding-top: 296px;
+    float: left;
+    margin: 50px 0;
+    width: 100%;
+    text-align: center;
+
  }
+ .logoImage { display: inline-block;
+    vertical-align: top;
+}
  .logoImage img {
     height: auto;
     max-height: 80px;
@@ -26,9 +33,8 @@
     max-width: 100%;
 }
 .logo_text {
-    position: absolute;
-    top: 113%;
-    left: 43%;
+    display: inline-block;
+    margin-left: 20px;
     font-size: 63px;
 }
 .introduction {
@@ -40,7 +46,9 @@
     letter-spacing: .5px;
     line-height: 1.6em;
     color: #1f1f1f;
-    padding-left: 600px;
-    padding-right: 508px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 770px;
     padding-top: 55px;
+    margin: auto;
 }
