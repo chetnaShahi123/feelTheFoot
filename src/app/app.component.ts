@@ -11,10 +11,15 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent implements OnInit{
   //title = 'app';
-  currentUrl : string;
+  currentUrl : string ;
 
   constructor(private router : Router, private fireauth: AngularFireAuth, private data: DataService,private auth: AuthService) {
     router.events.subscribe((_:NavigationEnd) => this.currentUrl = _.url);
+    //let status: boolean = this.auth.getLoggedInStatus();console.log(status);
+    // if(status == false) {
+    //   this.router.navigate(['/login']);
+    // }
+   
   }
 
   ngOnInit() {
@@ -29,10 +34,11 @@ export class AppComponent implements OnInit{
            
           }
           else {
-            console.log("hg");
+            this.router.navigate(['/login']);
           }
         }
       )
   }
+
 
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dancers',
@@ -39,12 +40,17 @@ export class DancersComponent implements OnInit {
   currentUrl : string;
  
 
-  constructor(private db:AngularFirestore, private data: DataService , private router: Router) { 
+  constructor(private db:AngularFirestore, private data: DataService , private router: Router, private auth: AuthService) { 
     router.events.subscribe((route) => {
       this.currentUrl = router.url;
       this.data.storeUrl(this.currentUrl);
     });
     this.dancers_list();
+
+    setTimeout((function(){
+      this.loggout();
+      console.log(this.currentUrl);
+   }).bind(this), 43200000);
   }
 
   ngOnInit() {
@@ -63,6 +69,11 @@ export class DancersComponent implements OnInit {
         this.dancers = data; 
       }
     );
+  }
+
+  loggout() { 
+    this.auth.logout();
+    this.router.navigate(['/login']);
   }
 
 }

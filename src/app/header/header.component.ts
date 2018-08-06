@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService,private router: Router) { }
+  constructor(private auth: AuthService,private router: Router) { 
+    let status: boolean = this.auth.getLoggedInStatus();
+  }
 
   ngOnInit() {
   }
@@ -18,5 +20,7 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
     this.router.navigate(['/login']);
   }
+
+  
 
 }

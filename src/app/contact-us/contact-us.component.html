@@ -5,7 +5,7 @@
       <ngb-alert type="danger" [dismissible]="error" *ngIf="error" (close)="error=false">
           <strong> {{response}}</strong>
         </ngb-alert>
-  <h1  appShadow class="contact_header">Send Us a Message ({{currency | currency: 'EUR'}})</h1>
+  <h1  appShadow class="contact_header">Send Us a Message ({{currency | currency: 'INR' : 'code'}})</h1>
   <h5 [appShadow]= "'green'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'" appFancy>
     For general inquiries, please call 212-405-9000 or use the Contact form below.
   </h5><br>
