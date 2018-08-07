@@ -60,7 +60,7 @@ export class DataService implements OnInit{
        })
       })
       .catch(err=> {
-        reject(err);
+        reject(err.message);
       })
     })
   }

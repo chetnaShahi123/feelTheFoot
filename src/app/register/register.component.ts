@@ -41,7 +41,11 @@ export class RegisterComponent implements OnInit {
      // this.message = abc;
      this.router.navigate(['login']);
       //this.submitted = true;
-   });
+   })
+   .catch(errorr=>{
+    this.err_submitted = true;
+    this.message = errorr;
+   })
   }
   //  db.collection('dancers').valueChanges();
 
