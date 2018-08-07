@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  
+  getLoggedInStatussFromservice (): boolean {
+    return this.auth.getLoggedInStatus();
+  }
+
+
 
 }

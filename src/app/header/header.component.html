@@ -20,13 +20,13 @@
       </a>
     </li>
 
-    <li>
+    <li *ngIf="getLoggedInStatussFromservice() == false">
       <a routerLink="login" title="login">
         LOG IN/Sign up
       </a>
     </li>
 
-    <li>
+    <li *ngIf="getLoggedInStatussFromservice()">
       <a (click)="logout()" title="logout">
         LOG Out
       </a>

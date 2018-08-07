@@ -18,6 +18,7 @@ const routes : Routes = [
   {
     path : 'home',
     component : HomeComponent,
+    canActivate: [AuthGuard],
     children: [
       {
       path : 'feelTheFeet',
